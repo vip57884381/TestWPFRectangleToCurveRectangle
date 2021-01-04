@@ -1,0 +1,84 @@
+﻿<Window x:Class="TestWPFRectangleToCurveRectangle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWPFRectangleToCurveRectangle"
+        mc:Ignorable="d"
+        Title="TestWPFRectangleToCurveRectangle"
+        Height="450"
+        Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="30*" />
+        </Grid.ColumnDefinitions>
+
+        <Canvas x:Name="Canvas_1"
+                Grid.Column="0"
+                Grid.Row="0"
+                MouseMove="Canvas_1_MouseMove"
+                Background="#FFC9C9C9">
+        </Canvas>
+
+        <StackPanel x:Name="StackPanel_1"
+                    Grid.Column="1"
+                    Grid.Row="0">
+            <GroupBox Header="正方形">
+                <StackPanel>
+                    <WrapPanel>
+                        <Button x:Name="ShowRectangle_Button_1"
+                                Content="顯示矩陣"
+                                Click="ShowRectangle_Button_1_Click" />
+                        <Button x:Name="ShowRectangleDrawLine_Button_1"
+                                Content="劃線"
+                                Click="ShowRectangleDrawLine_Button_1_Click" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <Label Content="長：" />
+                        <TextBox x:Name="Height_TextBox_1"
+                                 Text="5"
+                                 HorizontalAlignment="Right"
+                                 VerticalAlignment="Center" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <Label Content="寬：" />
+                        <TextBox x:Name="Width_TextBox_1"
+                                 Text="5"
+                                 HorizontalAlignment="Right"
+                                 VerticalAlignment="Center" />
+                    </WrapPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="定位點">
+                <StackPanel>
+                    <WrapPanel>
+                        <Button x:Name="ShowCurveRectangle_Button_1"
+                                Content="顯示控制點"
+                                Click="ShowCurveRectangle_Button_1_Click" />
+                        <Button x:Name="ShowCurveRectangleDrawLine_Button_1"
+                                Content="劃線(控制點)"
+                                Click="ShowCurveRectangleDrawLine_Button_1_Click" />
+                    </WrapPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="校正點">
+                <StackPanel>
+                    <WrapPanel>
+                        <Button x:Name="ShowCurveRectangleAdj_Button_1"
+                                Content="顯示校正點"
+                                Click="ShowCurveRectangleAdj_Button_1_Click" />
+                        <Button x:Name="ShowCurveRectangleAdjDrawLine_Button_1"
+                                Content="劃線(校正點)"
+                                Click="ShowCurveRectangleAdjDrawLine_Button_1_Click" />
+                        <Button x:Name="ShowCurveRectangleDelAdj_Button_1_Copy"
+                                Content="刪除校正點"
+                                Click="ShowCurveRectangleDelAdj_Button_1_Click" />
+                    </WrapPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
